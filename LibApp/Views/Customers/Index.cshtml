@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LibApp.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no customers yet.</p>
+}
+else
+{
+    <table class="table table-hover">
+        <thead>
+            <tr><th colspan="2">Customer</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => customer.Name)</td>
+                    <td><a asp-action="Details" asp-route-id="@customer.Id">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
