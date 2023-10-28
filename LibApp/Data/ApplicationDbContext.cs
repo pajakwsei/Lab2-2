@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using LibApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibApp.Data
@@ -9,5 +10,9 @@ namespace LibApp.Data
             : base(options)
         {
         }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        
     }
 }
