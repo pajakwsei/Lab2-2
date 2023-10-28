@@ -5,11 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibApp.Models;
 using LibApp.ViewModels;
+using LibApp.Data;
 
 namespace LibApp.Controllers
 {
     public class CustomersController : Controller
     {
+        // DbContext will be polled through Dependency Injection
+        public CustomersController(ApplicationDbContext dbContext)
+        {
+            _context = dbContext;
+        }
+
         public ViewResult Index()
         {
             var customers = GetCustomers();
@@ -37,5 +44,7 @@ namespace LibApp.Controllers
                 new Customer { Id = 2, Name = "Monika Nowak" }
             };
         }
+
+        private ApplicationDbContext _context;
     }
 }
