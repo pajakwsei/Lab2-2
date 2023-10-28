@@ -1,14 +1,38 @@
-﻿@model LibApp.Models.Book
+﻿@*@model LibApp.Models.Book*@
+@model LibApp.ViewModels.RandomBookViewModel
 
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
     //var book = ViewData["Book"] as Book;
-    var book = ViewBag.Book as Book;
+    //var book = ViewBag.Book as Book;
 }
 
-@*Use for direct model passing from the controller*@
-@*<h2>@Model.Title</h2>*@ 
+@*Use for direct model passing from the controller - Book model*@
+@*<h2>@Model.Title</h2>*@
 
-@*Use for ViewData or ViewBag*@
-<h2>@book.Title</h2>
+@*Use for ViewData or ViewBag - Book model*@
+@*<h2>@book.Title</h2>*@
+
+@{
+    var className = Model.Customers.Count == 5 ? "popular" : null;
+}
+
+@*Use for direct model passing from the controller - RandomBookViewModel*@
+<h2 class="@className">@Model.Book.Title</h2>
+
+<ul>
+    @{
+        if (Model.Customers.Count == 0)
+        {
+            <p>No one has rented this book before</p>
+        }
+        else
+        foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+    }
+    
+
+</ul>
