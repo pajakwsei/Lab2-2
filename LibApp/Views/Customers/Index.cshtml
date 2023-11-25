@@ -24,6 +24,10 @@ else
                 <tr>
                     <td>@Html.DisplayFor(modelItem => customer.Name)</td>
                     <td>@customer.MembershipType.Name</td>
+                    @if (customer.Birthdate.HasValue)
+                    {
+                        <td>@customer.Birthdate.Value.ToShortDateString()</td>
+                    }
                     <td><a asp-action="Details" asp-route-id="@customer.Id">Details</a></td>
                 </tr>
             }
