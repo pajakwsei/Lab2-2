@@ -10,6 +10,7 @@ namespace LibApp.Models
         [StringLength(100)]
         public string Name { get; set; }
         public DateTime? Birthdate { get; set; }
+        public bool SubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
         public Customer()
         {
