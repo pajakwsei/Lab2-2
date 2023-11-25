@@ -16,12 +16,14 @@ else
     <table class="table table-hover">
         <thead>
             <tr><th colspan="2">Customer</th></tr>
+            <tr><th colspan="1">Discount Rate</th></tr>
         </thead>
         <tbody>
             @foreach (var customer in Model)
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => customer.Name)</td>
+                    <td>@customer.MembershipType.Name</td>
                     <td><a asp-action="Details" asp-route-id="@customer.Id">Details</a></td>
                 </tr>
             }
