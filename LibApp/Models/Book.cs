@@ -4,7 +4,7 @@ namespace LibApp.Models
 {
     public class Book
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(100)]
         public string Title { get; set; }

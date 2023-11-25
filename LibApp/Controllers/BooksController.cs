@@ -3,6 +3,7 @@ using LibApp.Models;
 using LibApp.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 
 namespace LibApp.Controllers
@@ -16,13 +17,18 @@ namespace LibApp.Controllers
         // GET: BooksController
         public ActionResult Index()
         {
-            return View();
+            var books = _context.Books.Include(b => b.Genre).ToList();
+            return View(books);
         }
 
         // GET: BooksController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var book = _context.Books
+                .Include(b => b.Genre)
+                .SingleOrDefault(b => b.Id == id);
+
+            return View(book);
         }
 
         // GET: BooksController/Create
