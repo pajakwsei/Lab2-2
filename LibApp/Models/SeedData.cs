@@ -1,6 +1,8 @@
 ﻿using LibApp.Data;
 using Microsoft.EntityFrameworkCore;
 
+// to recreate database: Nuget Package Manager Console -> update-database 
+
 namespace LibApp.Models
 {
     public class SeedData
