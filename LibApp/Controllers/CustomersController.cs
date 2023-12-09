@@ -50,10 +50,23 @@ namespace LibApp.Controllers
         [HttpPost]
         public IActionResult Create(NewCustomerViewModel viewModel)
         {
-            _context.Customers.Add(viewModel.Customer);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Customers");
+            if (viewModel.Customer.Id == 0)
+            { 
+                _context.Customers.Add(viewModel.Customer);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == viewModel.Customer.Id);
 
+                customerInDb.Name = viewModel.Customer.Name;
+                customerInDb.Birthdate = viewModel.Customer.Birthdate;
+                customerInDb.MembershipTypeId = viewModel.Customer.MembershipTypeId;
+                customerInDb.SubscribedToNewsletter = viewModel.Customer.SubscribedToNewsletter;
+
+            }
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index", "Customers");
         }
 
         public IActionResult Edit(int id)
