@@ -1,4 +1,4 @@
-﻿@model LibApp.Models.Customer
+﻿@model LibApp.ViewModels.NewCustomerViewModel
 
 @{
     ViewBag.Title = "New";
@@ -9,21 +9,28 @@
 @using (Html.BeginForm("Create", "Customers"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+        @Html.HiddenFor(m => m.Customer.Id)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new {@class = "form-control"})
 
 @*        <label for="Name" class="fomr-label">Name</label>
         <input type="text" class="form-control" itemid="Name"> *@
     </div>    
     <div class="form-group">
-        @Html.LabelFor(m => m.Birthdate)
+        @Html.LabelFor(m => m.Customer.Birthdate)
         @*<label for="Name" class="form-label">Date </label>*@
-        @Html.TextBoxFor(m => m.Birthdate, new {@class = "form-control"})
+        @Html.TextBoxFor(m => m.Customer.Birthdate, new {@class = "form-control"})
     </div>
     <div class="form-check">
         <label class="form-check-label" for="flexCheckDefault">
-            @Html.CheckBoxFor(m => m.SubscribedToNewsletter) Subscribed to newsletter?
+            @Html.CheckBoxFor(m => m.Customer.SubscribedToNewsletter) Subscribed to newsletter?
         </label>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn-primary">Save</button>
 }
