@@ -48,7 +48,7 @@ namespace LibApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(NewCustomerViewModel viewModel)
+        public IActionResult Save(NewCustomerViewModel viewModel)
         {
             if (viewModel.Customer.Id == 0)
             { 
