@@ -11,13 +11,18 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+
+@*        <label for="Name" class="fomr-label">Name</label>
+        <input type="text" class="form-control" itemid="Name"> *@
     </div>    
     <div class="form-group">
         @Html.LabelFor(m => m.Birthdate)
         @Html.TextBoxFor(m => m.Birthdate, new {@class = "form-control"})
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.SubscribedToNewsletter)
-        @Html.CheckBoxFor(m => m.SubscribedToNewsletter)
+    <div class="form-check">
+        <label class="form-check-label" for="flexCheckDefault">
+            @Html.CheckBoxFor(m => m.SubscribedToNewsletter) Subscribed to newsletter?
+        </label>
     </div>
+
 }
