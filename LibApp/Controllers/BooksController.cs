@@ -31,46 +31,34 @@ namespace LibApp.Controllers
             return View(book);
         }
 
-        // GET: BooksController/Create
-        public ActionResult Create()
+        public IActionResult New()
         {
-            return View();
+            var genres = _context.Genre.ToList();
+            var viewModel = new BookFormViewModel
+            {
+                Genres = genres
+            };
+
+            return View("BookForm", viewModel);
         }
 
-        // POST: BooksController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // GET: BooksController/Edit/{id}
+        public IActionResult Edit(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            var book = _context.Books.SingleOrDefault(b => b.Id == id);
 
-        // GET: BooksController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+            if (book == null)
+            {
+                return NotFound();
+            }
 
-        // POST: BooksController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            var viewModel = new BookFormViewModel
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                Book = book,
+                Genres = _context.Genre.ToList()
+            };
+
+            return View("BookForm", viewModel);
         }
 
         // GET: BooksController/Random
@@ -98,26 +86,35 @@ namespace LibApp.Controllers
             //return RedirectToAction("Random", "Books");
         }
 
-        // GET: BooksController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BooksController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Save(Book book)
         {
+            if (book.Id == 0)
+            {
+                book.DateAdded = DateTime.Now;
+                _context.Books.Add(book);
+            }
+            else
+            {
+                var bookInDb = _context.Books.SingleOrDefault(b => b.Id == book.Id);
+                bookInDb.Title = book.Title;
+                bookInDb.GenreId = book.GenreId;
+                bookInDb.ReleaseDate = book.ReleaseDate;
+                bookInDb.NumberInStock = book.NumberInStock;
+            }
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.SaveChanges();
             }
-            catch
+            catch (DbUpdateException e)
             {
-                return View();
+                Console.WriteLine(e);
             }
+
+            return RedirectToAction("Index", "Books");
         }
+
 
         private ApplicationDbContext _context;
     }
