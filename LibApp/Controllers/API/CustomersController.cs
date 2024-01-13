@@ -50,7 +50,6 @@ namespace LibApp.Controllers.API
             _context.Customers.Add(_mapper.Map<Customer>(customerDto));
             _context.SaveChanges();
 
-            // Consider changing status - should be 201
             return CreatedAtRoute(nameof(GetCustomer), new { id = customerDto.Id});
         }
 
