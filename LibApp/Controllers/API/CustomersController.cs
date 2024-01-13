@@ -4,6 +4,7 @@ using LibApp.Models;
 using LibApp.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.Connections;
 
 namespace LibApp.Controllers.API
 {
@@ -50,7 +51,7 @@ namespace LibApp.Controllers.API
             _context.SaveChanges();
 
             // Consider changing status - should be 201
-            return Ok(customerDto);
+            return CreatedAtRoute(nameof(GetCustomer), new { id = customerDto.Id});
         }
 
         // PUT /api/customers/{id}
