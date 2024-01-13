@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LibApp
 build_property.RootNamespace = LibApp
-build_property.ProjectDir = C:\Users\Marcin\Source\Repos\Lab2-2\LibApp\
+build_property.ProjectDir = D:\Users\mpajak\source\repos\Lab2-2\LibApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Marcin\Source\Repos\Lab2-2\LibApp
+build_property.MSBuildProjectDirectory = D:\Users\mpajak\source\repos\Lab2-2\LibApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Books/BookForm.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Books/BookForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQm9va0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Books/Details.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Books/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Books/Index.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Books/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Books/Random.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Books/Random.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcUmFuZG9tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Customers/Details.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Customers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Customers/Index.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Customers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Customers/New.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Customers/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXE5ldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Home/Index.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Home/Privacy.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Shared/Error.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Shared/_LoginPartial.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/_ViewImports.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/_ViewStart.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Marcin/Source/Repos/Lab2-2/LibApp/Views/Shared/_Layout.cshtml]
+[D:/Users/mpajak/source/repos/Lab2-2/LibApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-sds6uvoqim

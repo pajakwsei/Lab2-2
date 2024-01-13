@@ -1,5 +1,7 @@
-﻿using LibApp.Data;
+﻿using AutoMapper;
+using LibApp.Data;
 using LibApp.Models;
+using LibApp.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,22 +11,23 @@ namespace LibApp.Controllers.API
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        public CustomersController(ApplicationDbContext context) {
+        public CustomersController(ApplicationDbContext context, IMapper mapper) {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET /api/customers
         [HttpGet]
-        public IEnumerable<Customer> GetCustomers()
-        { 
-            return _context.Customers.ToList(); 
+        public IEnumerable<CustomerDto> GetCustomers()
+        {
+            return _context.Customers.ToList().Select(_mapper.Map<Customer, CustomerDto>); 
         }        
         
         // GET /api/customers/{id}
         [HttpGet("{id}")]
         public IActionResult GetCustomer(int id)
         { 
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id); 
+            var customer = _mapper.Map<CustomerDto>(_context.Customers.SingleOrDefault(c => c.Id == id)); 
 
             if (customer == null)
             {
@@ -36,22 +39,23 @@ namespace LibApp.Controllers.API
 
         // POST /api/customers
         [HttpPost]
-        public IActionResult CreateCustomer(Customer customer)
+        public IActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            _context.Customers.Add(customer);
+            _context.Customers.Add(_mapper.Map<Customer>(customerDto));
             _context.SaveChanges();
 
-            return Ok(customer);
+            // Consider changing status - should be 201
+            return Ok(customerDto);
         }
 
         // PUT /api/customers/{id}
         [HttpPut("{id}")]
-        public IActionResult UpdateCustomer(int id, Customer customer)
+        public IActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -59,10 +63,7 @@ namespace LibApp.Controllers.API
             }
 
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
-            customerInDb.Name = customer.Name;
-            customerInDb.Birthdate = customer.Birthdate;
-            customerInDb.SubscribedToNewsletter = customer.SubscribedToNewsletter;
-            customerInDb.MembershipType = customer.MembershipType;
+            _mapper.Map(customerDto, customerInDb);
 
             _context.SaveChanges();
             return Ok(customerInDb);
@@ -85,5 +86,6 @@ namespace LibApp.Controllers.API
 
 
         private ApplicationDbContext _context;
+        private IMapper _mapper;
     }
 }
