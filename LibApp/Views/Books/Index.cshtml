@@ -7,17 +7,25 @@
 
 <h2>Books</h2>
 
+<p>
+    <a class="btn btn-primary" asp-action="New">New Book</a>
+</p>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Book</th>
+            <th colspan="2">Genre</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var book in Model)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => book.Title)</td>
+                <td><a asp-action="Edit" asp-route-id="@book.Id">@Html.DisplayFor(modelItem => book.Title)</a></td>
+                <td>@book.Genre.Name</td>
+                <td><a asp-action="Details" asp-route-id="@book.Id">Details</a></td>
+
             </tr>
         }
     </tbody>
