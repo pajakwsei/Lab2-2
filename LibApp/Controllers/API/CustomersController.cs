@@ -25,7 +25,7 @@ namespace LibApp.Controllers.API
         }        
         
         // GET /api/customers/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCustomer")]
         public IActionResult GetCustomer(int id)
         { 
             var customer = _mapper.Map<CustomerDto>(_context.Customers.SingleOrDefault(c => c.Id == id)); 
