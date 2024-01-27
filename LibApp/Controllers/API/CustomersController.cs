@@ -5,6 +5,7 @@ using LibApp.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibApp.Controllers.API
 {
@@ -19,9 +20,14 @@ namespace LibApp.Controllers.API
 
         // GET /api/customers
         [HttpGet]
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(_mapper.Map<Customer, CustomerDto>); 
+            var customers = _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(_mapper.Map<Customer, CustomerDto>);
+
+            return Ok(customers); 
         }        
         
         // GET /api/customers/{id}
