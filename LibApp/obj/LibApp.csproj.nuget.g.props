@@ -19,5 +19,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">D:\Users\mpajak\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.19</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">D:\Users\mpajak\.nuget\packages\jquery\1.12.4</PkgjQuery>
   </PropertyGroup>
 </Project>

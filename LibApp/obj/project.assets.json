@@ -31,6 +31,12 @@
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Bootbox.JS/5.5.2": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.12.4"
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
