@@ -20,9 +20,10 @@ namespace LibApp.Controllers
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //return View(customers);
 
-            return View(customers);
+            return View(); // ajax handles data polling using API controller
         }
 
         public IActionResult Details(int id)
